@@ -1,38 +1,16 @@
-import os, sys
+import requests
 import time
 import json
-import requests
-from groq import Groq, APIError
-from langgraph.graph import START, StateGraph, END
-from typing_extensions import TypedDict
-
-if os.environ.get("GROQ_API_KEY") is None :
-    print('Erreur dans la clé api')
-    sys.exit()
-if os.environ.get("SERPER_API_KEY") is None :
-    print('Erreur dans la clé api SERPER')
-    sys.exit()
-
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
-model = "llama-3.3-70b-versatile"
-
-url = "https://google.serper.dev/search"
-
-class State(TypedDict):
-    brand: str
-    analysis: str
-    crisis: str
-    report: str
-    score: int
-    raw_data: str
-    metrics: dict
+import os
+from state import State
+from config import url, model, client
 
 def analyze(state: State):
     sources = [
     {"title": r["title"], "snippet": r["snippet"]}
     for r in state["raw_data"]["organic"]
 ]
-    time.sleep(2)
+    time.sleep(10)
     message = client.chat.completions.create(
         model=model,
         messages=[{"role": "system", "content": "Tu es un expert en analyse de réputation de marque."},
@@ -43,7 +21,7 @@ def analyze(state: State):
     return {"analysis": message.choices[0].message.content}
 
 def report(state: State):
-    time.sleep(2)
+    time.sleep(10)
     message = client.chat.completions.create(
         model=model,
         messages=[{"role": "system", "content": "Tu es un expert dans la rédaction de rapport d'analyse de réputation d'entreprise"},
@@ -52,7 +30,7 @@ def report(state: State):
     return {"report": message.choices[0].message.content}
 
 def detect_crisis(state: State):
-    time.sleep(2)
+    time.sleep(10)
     message= client.chat.completions.create(
         model=model,
         messages=[{"role": "system", "content": "Tu es un expert dans la détéction de crise ou de polémique dans une analyse de réputation"},
@@ -61,7 +39,7 @@ def detect_crisis(state: State):
     return {"crisis": message.choices[0].message.content}
 
 def report_crisis(state: State):
-    time.sleep(2)
+    time.sleep(10)
     message = client.chat.completions.create(
         model=model,
         messages=[{"role": "system", "content": "Tu es un expert dans la rédaction de rapport d'analyse de réputation d'entreprise"},
@@ -70,7 +48,7 @@ def report_crisis(state: State):
     return {"report": message.choices[0].message.content}
 
 def evaluate(state: State):
-    time.sleep(2)
+    time.sleep(10)
     message = client.chat.completions.create(
         model=model,
         messages=[{"role": "system", "content": "Ton unique objectif est de lire un rapport et d'en évaluer la qualité avec une note sur 10"},
@@ -82,7 +60,7 @@ def evaluate(state: State):
         return {"score": 5}
     
 
-def ronting_function(state: State):
+def routing_function(state: State):
     if state["crisis"]:
         return "crise"
     else:
@@ -94,7 +72,6 @@ def choice_eval(state: State):
         return "report"
     
 def collect(state: State):
-    time.sleep(2)
     payload = {
     "q": f"{state['brand']} Réputation polémique 2024",
     "gl": "fr",
@@ -108,7 +85,7 @@ def collect(state: State):
     return {"raw_data": response.json()}
 
 def sentiment(state: State):
-    time.sleep(2)
+    time.sleep(10)
     sources = [
     {"title": r["title"], "snippet": r["snippet"]}
     for r in state["raw_data"]["organic"]
@@ -134,31 +111,3 @@ def sentiment(state: State):
         "tonality": "inconnu",
         "key_entities": []
     }}
-    
-graph = StateGraph(State)
-
-# Nodes
-graph.add_node("collect", collect)
-graph.add_node("sentiment", sentiment)
-graph.add_node("analyze", analyze)
-graph.add_node("detect_crisis", detect_crisis)
-graph.add_node("report", report)
-graph.add_node("report_crisis", report_crisis)
-graph.add_node("evaluate", evaluate)
-graph.add_node("evaluate_crisis", evaluate)
-# EDGES
-graph.add_edge(START, "collect")
-graph.add_edge("collect", "sentiment")
-graph.add_edge("sentiment", "analyze")
-graph.add_edge("analyze", "detect_crisis")
-graph.add_conditional_edges("detect_crisis", ronting_function, {"crise": "report_crisis", "normal": "report" })
-graph.add_edge("report", "evaluate")
-graph.add_edge("report_crisis", "evaluate_crisis")
-graph.add_conditional_edges("evaluate", choice_eval, {"END": END, "report": "report"})
-graph.add_conditional_edges("evaluate_crisis", choice_eval, {"END": END, "report": "report_crisis"})
-
-
-brand = "Nike"
-result = graph.compile().invoke({"brand": brand})
-
-print(result)

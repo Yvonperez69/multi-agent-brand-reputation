@@ -107,7 +107,7 @@ def sentiment(state: State):
     
     message = client.chat.completions.create(
         model=model,
-        messages=[{"role": "system", "content": """ton objectif est de construire des métriques à partir de données suivant l'exemple : 
+        messages=[{"role": "system", "content": """Réponds UNIQUEMENT avec le JSON, sans texte supplémentaire, sans balises markdown. Ton objectif est de construire des métriques à partir de données suivant l'exemple : 
                 {"sentiment_score": 0.3,
                 "themes": ["sexisme", "performance", "design"],
                 "tonality": "négatif",
@@ -116,6 +116,8 @@ def sentiment(state: State):
                 "sentiment_score" est un float entre -1 (très négatif) et 1 (très positif)"""},
                   {"role": "user", "content": f'Produit un JSON avec les métriques pour les données suivantes : {sources}'}]
     )
+    raw = message.choices[0].message.content
+    print(repr(raw))
     try:
         return {"metrics": json.loads(message.choices[0].message.content)}
     except json.JSONDecodeError:
@@ -140,7 +142,7 @@ graph.add_node("evaluate_crisis", evaluate)
 # EDGES
 graph.add_edge(START, "collect")
 graph.add_edge("collect", "sentiment")
-graph.add_edge("sentiment", "analyse")
+graph.add_edge("sentiment", "analyze")
 graph.add_edge("analyze", "detect_crisis")
 graph.add_conditional_edges("detect_crisis", ronting_function, {"crise": "report_crisis", "normal": "report" })
 graph.add_edge("report", "evaluate")

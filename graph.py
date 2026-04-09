@@ -24,6 +24,7 @@ class State(TypedDict):
     report: str
     score: int
     raw_data: str
+    metrics: dict
 
 def analyze(state: State):
     sources = [
@@ -97,18 +98,49 @@ def collect(state: State):
     }
     response = requests.request("POST", url, headers=headers, json=payload)
     return {"raw_data": response.json()}
+
+def sentiment(state: State):
+    sources = [
+    {"title": r["title"], "snippet": r["snippet"]}
+    for r in state["raw_data"]["organic"]
+]
+    
+    message = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "system", "content": """ton objectif est de construire des métriques à partir de données suivant l'exemple : 
+                {"sentiment_score": 0.3,
+                "themes": ["sexisme", "performance", "design"],
+                "tonality": "négatif",
+                "key_entities": ["Colleen Quigley", "JO Paris 2024"]}
+                
+                "sentiment_score" est un float entre -1 (très négatif) et 1 (très positif)"""},
+                  {"role": "user", "content": f'Produit un JSON avec les métriques pour les données suivantes : {sources}'}]
+    )
+    try:
+        return {"metrics": json.loads(message.choices[0].message.content)}
+    except json.JSONDecodeError:
+        return {"metrics": {
+        "sentiment_score": 0,
+        "themes": [],
+        "tonality": "inconnu",
+        "key_entities": []
+    }}
     
 graph = StateGraph(State)
+
+# Nodes
 graph.add_node("collect", collect)
+graph.add_node("sentiment", sentiment)
 graph.add_node("analyze", analyze)
 graph.add_node("detect_crisis", detect_crisis)
 graph.add_node("report", report)
 graph.add_node("report_crisis", report_crisis)
 graph.add_node("evaluate", evaluate)
 graph.add_node("evaluate_crisis", evaluate)
-
+# EDGES
 graph.add_edge(START, "collect")
-graph.add_edge("collect", "analyze")
+graph.add_edge("collect", "sentiment")
+graph.add_edge("sentiment", "analyse")
 graph.add_edge("analyze", "detect_crisis")
 graph.add_conditional_edges("detect_crisis", ronting_function, {"crise": "report_crisis", "normal": "report" })
 graph.add_edge("report", "evaluate")
@@ -118,5 +150,6 @@ graph.add_conditional_edges("evaluate_crisis", choice_eval, {"END": END, "report
 
 
 brand = "Nike"
-print(graph.compile().invoke({"brand": brand}))
+result = graph.compile().invoke({"brand": brand})
 
+print(result["metrics"])

@@ -76,7 +76,7 @@ START
 Installe les dépendances Python nécessaires :
 
 ```bash
-pip install groq langgraph requests typing_extensions
+pip install groq langgraph requests streamlit typing_extensions
 ```
 
 Définis ensuite les variables d'environnement :
@@ -103,6 +103,14 @@ python3 main.py
 ```
 
 Cette seconde démo lance une boucle interactive où le modèle peut appeler un outil météo fictif défini dans `weather.py`
+
+### Interface Streamlit
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Cette interface propose un champ pour la marque, un bouton pour lancer l'analyse, puis affiche le rapport, les métriques principales et le JSON complet.
 
 
 ## Technologies utilisées

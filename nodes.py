@@ -21,7 +21,7 @@ def analyze(state: State):
     return {"analysis": message.choices[0].message.content}
 
 def report(state: State):
-    time.sleep(10)
+
     message = client.chat.completions.create(
         model=model,
         messages=[{"role": "system", "content": "Tu es un expert dans la rédaction de rapport d'analyse de réputation d'entreprise"},
@@ -30,7 +30,7 @@ def report(state: State):
     return {"report": message.choices[0].message.content}
 
 def detect_crisis(state: State):
-    time.sleep(10)
+
     message= client.chat.completions.create(
         model=model,
         messages=[{"role": "system", "content": "Tu es un expert dans la détéction de crise ou de polémique dans une analyse de réputation"},
@@ -39,7 +39,7 @@ def detect_crisis(state: State):
     return {"crisis": message.choices[0].message.content}
 
 def report_crisis(state: State):
-    time.sleep(10)
+
     message = client.chat.completions.create(
         model=model,
         messages=[{"role": "system", "content": "Tu es un expert dans la rédaction de rapport d'analyse de réputation d'entreprise"},
@@ -48,16 +48,16 @@ def report_crisis(state: State):
     return {"report": message.choices[0].message.content}
 
 def evaluate(state: State):
-    time.sleep(10)
+
     message = client.chat.completions.create(
         model=model,
         messages=[{"role": "system", "content": "Ton unique objectif est de lire un rapport et d'en évaluer la qualité avec une note sur 10"},
                   {"role": "user", "content": f"""lit le rapport {state['report']} et renvoie une note sur 10 en format JSON valide de la forme suivante {{"score": 7}} """ }]
     )
     try:
-        return {"score": json.loads(message.choices[0].message.content)["score"]}
+        return {"score": json.loads(message.choices[0].message.content)["score"], "steps": state["steps"] + 1}
     except json.JSONDecodeError:
-        return {"score": 5}
+        return {"score": 5, "steps": state["steps"] + 1}
     
 
 def routing_function(state: State):
@@ -66,7 +66,8 @@ def routing_function(state: State):
     else:
         return "normal"
 def choice_eval(state: State):
-    if state["score"] > 7:
+    
+    if state["score"] > 7 or state["steps"] >= 1:
         return "END"
     else :
         return "report"
@@ -85,7 +86,7 @@ def collect(state: State):
     return {"raw_data": response.json()}
 
 def sentiment(state: State):
-    time.sleep(10)
+
     sources = [
     {"title": r["title"], "snippet": r["snippet"]}
     for r in state["raw_data"]["organic"]

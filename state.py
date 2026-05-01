@@ -8,3 +8,4 @@ class State(TypedDict):
     score: int
     raw_data: dict
     metrics: dict
+    steps: int

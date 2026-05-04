@@ -13,7 +13,7 @@ tab1, tab2, tab3 = st.tabs(["Analyse", "Chatbot", "historique"])
 
 def chat_bot(prompt,hist):
     
-    key_words = ["marque", "réputation", "rapport"]
+    key_words = ["marque", "réputation", "rapport", "analyse", "crise", "polémique",'tonalité', "score","métrique", "métriques", "sentiment", "sources", "contexte"]
     contexte = ""
     
     if any(kw in prompt.lower() for kw in key_words):
@@ -22,9 +22,10 @@ def chat_bot(prompt,hist):
             n_results=2
         )
         contexte = "\n\n".join(results["documents"][0])
+        metadatas = results["metadatas"][0]
     
     stream = client.chat.completions.create(
-    messages=[{"role":"system", "content":f"Tu es un Chat Bot dans une app d'analyse et rédaction de rapport sur la réputation de marques. Reponds en te basant sur ces rapports :{contexte}"},
+    messages=[{"role":"system", "content":f"Tu es un Chat Bot dans une app d'analyse et rédaction de rapport sur la réputation de marques. Reponds en te basant sur ces rapports :{contexte} et les métadonnées : {metadatas}"},
               *hist,
               {"role":"user", "content":prompt}],
     model=model,

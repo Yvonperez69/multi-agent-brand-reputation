@@ -14,7 +14,7 @@ def save_result(brand, result):
     collection.add(
 	ids=[f"id{n}"],
 	documents=[result["report"]],
-    metadatas= [{"brand":brand, "date":date, "tonality":result["metrics"]["tonality"], "score":result["score"]}]
+    metadatas= [{"brand":brand, "date":date, "metrics": json.dumps(result["metrics"]), "score":result["score"]}]
     )
     print(collection.count())
     print(f"Rapport sauvegardé dans : {path}")

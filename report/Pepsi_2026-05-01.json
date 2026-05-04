@@ -1,0 +1,114 @@
+{
+    "raw_data": {
+        "searchParameters": {
+            "q": "Pepsi Réputation polémique 2024",
+            "gl": "fr",
+            "hl": "fr",
+            "type": "search",
+            "engine": "google"
+        },
+        "organic": [
+            {
+                "title": "Des produits PepsiCo retirés de supermarchés en Europe",
+                "link": "https://www.lapresse.ca/affaires/entreprises/2024-01-06/augmentations-de-prix-inacceptables/des-produits-pepsico-retires-de-supermarches-en-europe.php",
+                "snippet": "La chaîne d'épicerie française a déclaré qu'elle a retiré les produits PepsiCo des étagères en France jeudi. « Nous ne vendons plus cette marque ...",
+                "date": "6 janv. 2024",
+                "attributes": {
+                    "Termes manquants ": "polémique | Afficher les résultats avec :polémique"
+                },
+                "position": 1
+            },
+            {
+                "title": "Des marques américaines accusées de soutenir Israël sont ...",
+                "link": "https://www.lemonde.fr/international/article/2024/06/13/au-moyen-orient-des-marques-americaines-sous-la-pression-d-un-boycott-contre-israel_6239224_3210.html",
+                "snippet": "Mais la tendance à l'œuvre fait les affaires des imitations de Coca-Cola et de Pepsi au Moyen-Orient, comme Jalloul et Zee Cola au Liban, Matrix ...",
+                "date": "13 juin 2024",
+                "position": 2
+            },
+            {
+                "title": "Consommation. Clash entre Carrefour et PepsiCo : quelles ...",
+                "link": "https://www.ledauphine.com/economie/2024/01/04/clash-entre-carrefour-et-pepsico-quelles-consequences-pour-les-clients",
+                "snippet": "Les magasins Carrefour vont-ils réellement bannir de leurs rayons tous les produits de PepsiCo France pour protester contre les hausses de prix ...",
+                "date": "4 janv. 2024",
+                "position": 3
+            },
+            {
+                "title": "Le groupe américain PepsiCo publie des résultats contrastés et ...",
+                "link": "https://www.lefigaro.fr/societes/le-groupe-americain-pepsico-publie-des-resultats-contrastes-et-abaisse-des-previsions-pour-2024-20241008",
+                "snippet": "Il devrait atteindre au moins 8,15 dollars en 2024, contre 7,62 dollars en 2023, selon PepsiCo. Et le groupe prévoit toujours de restituer ...",
+                "date": "8 oct. 2024",
+                "attributes": {
+                    "Termes manquants ": "polémique | Afficher les résultats avec :polémique"
+                },
+                "position": 4
+            },
+            {
+                "title": "La rupture acrimonieuse entre Guru et Pepsi aboutit à des poursuites",
+                "link": "https://www.lesaffaires.com/bourse/actualites-boursieres/la-rupture-acrimonieuse-entre-guru-et-pepsi-aboutit-a-des-poursuites/",
+                "snippet": "Guru accuse Pepsi d'avoir profité de son rôle de distributeur pour mousser ses propres produits au détriment de ceux de l'entreprise québécoise.",
+                "date": "20 avr. 2026",
+                "position": 5
+            },
+            {
+                "title": "Ces bad buzz devenus des cas d'école… et ce qu'ils nous apprennent",
+                "link": "https://www.fireflycomms.com/fr/ces-fails-de-comm-devenus-cultes-et-ce-quils-nous-apprennent/",
+                "snippet": "Plutôt que de se justifier maladroitement, la marque a choisi l'autodérision : une publicité détournant son logo en « FCK » sur ses buckets ...",
+                "date": "2 sept. 2025",
+                "position": 6
+            },
+            {
+                "title": "Responsabilité des multinationales : Nestlé, Coca-Cola et PepsiCo",
+                "link": "https://direct-magazine.ch/featured-fr/sldrt/nestle-coca-cola-et-pepsico-les-trois-geants-du-marche-alimentaire-mondiaux/",
+                "snippet": "En 2024, on a également appris que Nestlé filtrait apparemment depuis les années 1990 de l'eau contaminée à l'aide de méthodes illégales et ...",
+                "date": "2 oct. 2025",
+                "position": 7
+            },
+            {
+                "title": "L'État de New York débouté dans son recours contre PepsiCo",
+                "link": "https://www.lapresse.ca/actualites/environnement/2024-11-01/pollution-plastique/l-etat-de-new-york-deboute-dans-son-recours-contre-pepsico.php",
+                "snippet": "La plainte contre PepsiCo avançait entre autres que le groupe avait « induit en erreur le public au sujet de l'efficacité du recyclage de son ...",
+                "date": "1 nov. 2024",
+                "attributes": {
+                    "Termes manquants ": "polémique | Afficher les résultats avec :polémique"
+                },
+                "position": 8
+            },
+            {
+                "title": "JOP 2024 : des athlètes demandent des emballages réutilisables à ...",
+                "link": "https://www.environnement-magazine.fr/pollutions/article/2024/07/11/149518/jop-2024-des-athletes-demandent-des-emballages-reutilisables-cocacola-pepsi",
+                "snippet": "A la veille des Jeux olympiques, plus de 100 organisations sportives et athlètes de haut niveau ont demandé à Coca-Cola et Pepsi de réduire ...",
+                "date": "11 juil. 2024",
+                "position": 9
+            },
+            {
+                "title": "Carrefour bannit les produits PepsiCo de ses magasins pour cause ...",
+                "link": "https://www.lemonde.fr/economie/article/2024/01/04/carrefour-bannit-les-produits-pepsico-de-ses-magasins-pour-cause-de-prix-eleves_6209068_3234.html",
+                "snippet": "L'enseigne boycotte les marques du groupe américain pour protester contre les hausses de tarifs demandées en 2024.",
+                "date": "4 janv. 2024",
+                "attributes": {
+                    "Termes manquants ": "Réputation polémique"
+                },
+                "position": 10
+            }
+        ],
+        "credits": 1
+    },
+    "metrics": {
+        "sentiment_score": 0.35,
+        "themes": [
+            "PepsiCo",
+            "Carrefour",
+            "Coca-Cola"
+        ],
+        "tonality": "négatif",
+        "key_entities": [
+            "PepsiCo",
+            "Carrefour"
+        ]
+    },
+    "analysis": "En analysant les métriques de sentiment et les sources fournies, voici une synthèse de l'état de la réputation de la marque Pepsi :\n\n**Note de sentiment :** 0,35 (sur 1) -> La réputation de la marque Pepsi est négative, avec un sentiment mitigé mais globalement défavorable.\n\n**Thèmes primaires :** \n\n- Le retrait de produits PepsiCo des supermarchés en Europe, notamment en France, à la suite d'une décision de Carrefour.\n- L'accusation selon laquelle Pepsi soutiendrait Israël, entraînant des conséquences négatives sur la réputation de la marque.\n- Le conflit entre Carrefour et PepsiCo lié aux hausses de prix et à la stratégie de distribution.\n- Des problèmes liés à la publicité, aux emballages et à la durabilité, entraînant des critiques des consommateurs et des médias.\n\n**Tendances :** \n\n- Les produits de Pepsi sont retirés des supermarchés en Europe, notamment en France.\n- La marque fait face à des accélérations visant sa responsabilité à l'égard de la durabilité et des pratiques de distribution.\n- Le public est de plus en plus sensible aux questions environnementales et sociales, ce qui affecte la réputation de la marque.\n\n**Recommendations :**\n\n1.  **Adaptation stratégique :** En réponse à ces tendances et critiques, la marque doit évaluer de nouvelles stratégies pour améliorer sa réputation et adapter ses produits et processus de distribution en fonction des attentes des consommateurs.\n2.  **Transparence et communication :** Il est essentiel pour la marque de communiquer clairement et de manière transparente ses efforts pour répondre aux préoccupations des consommateurs et les mesures prises pour améliorer sa durabilité et responsabilité.\n3.  **Conciliation avec les parties prenantes :** La marque devrait tenter de résoudre les conflits et les accélérations visant sa responsabilité, peut-être en partenariat avec les consommateurs et les organismes pour garantir des pratiques commerciales durables.\n\nCette analyse recommande à Pepsi de réévaluer sa stratégie globale, d'améliorer sa communication et d'envisager l'intégration de ses produits et processus de distribution en fonction des attentes des consommateurs. En effet, les retombées négatives sur la réputation peuvent se révéler dévastatrices à terme.",
+    "crisis": "Il semble y avoir une crise de réputation chez Pepsi, basée sur les éléments suivants présentés dans l'analyse :\n\n*   Un sentiment mitigé mais globalement défavorable avec une note de sentiment de 0,35 sur 1, ce qui indique une réputation négative.\n*   Quatre thèmes primaires d'inquiétude, à savoir le retrait de produits, l'accusation de soutien à Israël, le conflit entre Carrefour et PepsiCo, et les problèmes liés à la publicité, les emballages et la durabilité.\n*   Des tendances négatives qui affectent la réputation de la marque, notamment le retrait des produits des supermarchés en Europe, l'accélération de critiques à l'égard de la durabilité et des pratiques de distribution, et l'augmentation de la sensibilité publique aux questions environnementales et sociales.\n*   Des recommandations pour mettre en place de nouvelles stratégies, améliorer la transparence et la communication, et concilier les parties prenantes pour résoudre les conflits et les accélérations.\n\nSur le plan technique, la crise semble se manifester par la combinaison de facteurs tels que des réactions négatives du public, des critiques des consommateurs et des médias, et des tendances de marché qui affectent la durabilité et la responsabilité de la marque.\n\nLes recommandations suggèrent que Pepsi doit évaluer de nouvelles stratégies pour améliorer sa réputation et adapter ses produits et processus de distribution en fonction des attentes des consommateurs, communiquer clairement et de manière transparente, et concilier les parties prenantes.",
+    "report": "**Rapport de crise : Analyse de la crise de la marque Pepsi**\n\n**État de crise :**\n\nLa marque Pepsi est actuellement confrontée à une grave crise de réputation, entraînée par une série d'événements négatifs qui ont entraîné un impact important sur la confiance et l'image de la marque auprès des consommateurs et des parties prenantes.\n\n**Contexte :**\n\nLes événements qui ont conduit à la crise de la marque Pepsi incluent :\n\n1.  **Retrait des produits PepsiCo des supermarchés en Europe :** La décision de Carrefour a entraîné la suppression des produits Pepsi de ses rayons.\n2.  **Accusation de soutien à Israël :** La marque a été accusée de soutenir Israël, ce qui a entraîné des conséquences négatives sur sa réputation.\n3.  **Conflit entre Carrefour et PepsiCo :** Le conflit lié aux hausses de prix et à la stratégie de distribution a nui à la réputation de la marque.\n4.  **Problèmes liés à la publicité, aux emballages et à la durabilité :** Les critiques des consommateurs et des médias ont ajouté à la crise.\n\n**Conséquences :**\n\nLes conséquences de la crise de la marque Pepsi ont été importantes, entraînant une baisse de la confiance et du chiffre d'affaires. Les événements ont également entraîné une perte de réputation et de crédibilité pour la marque.\n\n**Analyse :**\n\nL'analyse nous montre que la crise de la marque Pepsi est due à plusieurs facteurs, notamment :\n\n1.  **Manque de transparence et de communication :** La marque n'a pas communiqué clairement sur ses intentions et ses actions.\n2.  **Stratégie de distribution inefficace :** La stratégie de distribution a entraîné des conflits avec les partenaires commerciaux.\n3.  **Problèmes liés à la durabilité et à la responsabilité :** Les critiques des consommateurs et des médias ont soulevé des questions sur la responsabilité et la durabilité de la marque.\n\n**Mesures correctives :**\n\nPour remédier à la crise de la marque Pepsi, nous recommandons les mesures suivantes :\n\n1.  **Adaptation stratégique :** Évaluer de nouvelles stratégies pour améliorer la réputation et adapter les produits et les processus de distribution en fonction des attentes des consommateurs.\n2.  **Transparence et communication :** Communiquer clairement et transparente sur les efforts pour répondre aux préoccupations des consommateurs et les mesures prises pour améliorer la durabilité et la responsabilité.\n3.  **Conciliation avec les parties prenantes :** Tenter de résoudre les conflits et les accélérations visant la responsabilité, peut-être en partenariat avec les consommateurs et les organismes pour garantir des pratiques commerciales durables.\n\n**Recommendations :**\n\nPour améliorer la réputation et la confiance de la marque Pepsi, nous recommandons l'adoption des mesures correctives ci-dessus. En effet, la crise de la marque a eu des conséquences importantes et il est essentiel de prendre des mesures pour la résoudre et prévenir de futures crises.",
+    "score": 5,
+    "steps": 1
+}
